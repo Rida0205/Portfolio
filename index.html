@@ -1,10 +1,13 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="fr">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Rida Sayah · DEENWAY · nouveau design</title>
-    <!-- Google fonts & subtle animation library (AOS) -->
+    <title>Rida Sayah · DEENWAY · nouvelles couleurs & langues</title>
+    <!-- Favicon (simple lettre D) -->
+    <link rel="icon" type="image/png" href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAAzElEQVR4Ae3WAQyEMBAF0Z6SgyVZkiVZkoMlWZKTJTnYEhR6l26BFrbJzP8/kUAgPzC8YpZzFEVxEwG/qf0o+ETgI4GPBD4S+EjgI4FHAo8E/iSAD+wRlwT8f/G9LgmsCXhJYE3ASwJrAl4SWBPwksCagJcE1gS8JLAm4CWBNQEvCawJeElgTcBLgv8l4BeyAL6TBNYEvCSwJuAlgTUBLwmsCXhJYE3ASwJrAl4SWBPwksCagJcE1gS8JLAm4CWBNYGvBPxCFvB8JbAm4CWBNQEvCawJeElgTcBLgv8JvAGZ6EP3FDoRlQAAAABJRU5ErkJggg==">
+    
+    <!-- Google fonts -->
     <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600&family=Playfair+Display:ital,wght@0,500;0,600;1,400&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
     <style>
@@ -15,15 +18,15 @@
         }
 
         body {
-            background-color: #f9f7f2;  /* beige doux lumineux */
-            color: #2b3b2b;
+            background-color: #fefcf5;  /* crème doux */
+            color: #264653;              /* bleu profond (remplace le vert) */
             font-family: 'Outfit', sans-serif;
             font-weight: 300;
             line-height: 1.6;
             scroll-behavior: smooth;
         }
 
-        /* typographie élégante */
+        /* typographie */
         h1, h2, h3, .serif-display {
             font-family: 'Playfair Display', serif;
             font-weight: 500;
@@ -33,13 +36,13 @@
         h1 {
             font-size: clamp(3.5rem, 12vw, 6rem);
             line-height: 1.1;
-            color: #1d3b1a;
+            color: #1e3b4a;              /* bleu nuit */
             margin-bottom: 0.3rem;
         }
 
         h2 {
             font-size: clamp(2.5rem, 7vw, 3.8rem);
-            color: #2e4f2b;
+            color: #2a5f6e;              /* bleu-vert */
             margin-bottom: 1.2rem;
             position: relative;
             display: inline-block;
@@ -51,12 +54,12 @@
             left: 0;
             width: 70px;
             height: 2px;
-            background: #b6ab8e;
+            background: #c9ab7e;          /* ocre doux */
         }
 
         h3 {
             font-size: 2rem;
-            color: #42633b;
+            color: #3b6d7c;
             margin-bottom: 0.5rem;
         }
 
@@ -66,7 +69,38 @@
             padding: 1.5rem 2rem 3rem;
         }
 
-        /* --- navigation revisitée --- */
+        /* --- SÉLECTEUR DE LANGUE (4 langues) --- */
+        .lang-selector {
+            display: flex;
+            justify-content: flex-end;
+            gap: 1.2rem;
+            padding: 1rem 0 0.5rem;
+            font-size: 0.9rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+        .lang-selector button {
+            background: none;
+            border: none;
+            color: #8b9fad;
+            cursor: pointer;
+            font-family: 'Outfit', sans-serif;
+            font-weight: 300;
+            padding: 0.2rem 0.5rem;
+            border-bottom: 1px solid transparent;
+            transition: all 0.2s;
+            font-size: 0.9rem;
+        }
+        .lang-selector button.active {
+            color: #264653;
+            border-bottom-color: #c9ab7e;
+            font-weight: 400;
+        }
+        .lang-selector button:hover {
+            color: #1a3b44;
+        }
+
+        /* navigation */
         .nav-bar {
             display: flex;
             justify-content: center;
@@ -77,18 +111,18 @@
             text-transform: uppercase;
             letter-spacing: 2px;
             font-size: 0.9rem;
-            border-bottom: 1px solid rgba(151, 141, 118, 0.2);
+            border-bottom: 1px solid rgba(170, 150, 130, 0.2);
         }
         .nav-bar a {
             text-decoration: none;
-            color: #5a7152;
+            color: #4d6a7a;
             transition: color 0.2s;
         }
         .nav-bar a:hover {
-            color: #1f3c1c;
+            color: #1e4452;
         }
 
-        /* --- hero avec photo et texte --- */
+        /* hero */
         .hero-grid {
             display: grid;
             grid-template-columns: 1fr 1fr;
@@ -103,17 +137,17 @@
             font-size: 1.4rem;
             letter-spacing: 4px;
             text-transform: uppercase;
-            color: #9f8d71;
+            color: #b1977a;               /* terre cuite */
             margin-bottom: 0.2rem;
             font-weight: 300;
         }
         .hero-tagline {
             font-size: 1.6rem;
             font-family: 'Playfair Display', serif;
-            color: #6a7f60;
+            color: #5b7c8c;
             font-style: italic;
             margin-top: 1rem;
-            border-left: 3px solid #dacbb4;
+            border-left: 3px solid #ddc7ae;
             padding-left: 1.5rem;
         }
         .hero-image {
@@ -124,45 +158,44 @@
         .hero-image img {
             max-width: 100%;
             width: 320px;
-            height: auto;
-            border-radius: 50% 50% 30% 50%;
-            box-shadow: 30px 30px 40px rgba(0,0,0,0.03), 10px 10px 20px rgba(90, 80, 60, 0.05);
-            filter: sepia(8%) saturate(80%);
+            height: 320px;
+            object-fit: cover;
+            border-radius: 40% 20% 40% 20%;
+            box-shadow: 30px 30px 40px rgba(80, 70, 50, 0.05);
+            filter: sepia(5%) saturate(90%);
             border: 2px solid #f1ede3;
             transition: transform 0.3s ease;
         }
-        .hero-image img:hover {
-            transform: scale(1.01);
-        }
 
-        /* carte fondateur avec photo */
+        /* fondateur card */
         .founder-card {
             display: flex;
             flex-wrap: wrap;
-            background: #f3efe7;
+            background: #f6f1ea;
             padding: 2.5rem 2rem;
             border-radius: 2px;
             gap: 2.5rem;
             align-items: center;
             margin: 2.5rem 0;
-            border-left: 5px solid #cfc4aa;
+            border-left: 5px solid #dbbc9b;
         }
         .founder-img {
             flex: 0 0 150px;
         }
         .founder-img img {
             width: 100%;
-            height: auto;
+            height: 150px;
+            object-fit: cover;
             border-radius: 50%;
-            filter: grayscale(20%) contrast(1.02);
-            box-shadow: 0 10px 20px rgba(70, 60, 40, 0.08);
+            filter: grayscale(15%);
+            box-shadow: 0 10px 20px rgba(90, 70, 40, 0.08);
         }
         .founder-bio {
             flex: 1;
             font-size: 1.1rem;
         }
 
-        /* ecosysteme : design plus moderne */
+        /* ecosysteme */
         .ecosystem-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
@@ -172,50 +205,48 @@
         .eco-item {
             background-color: #ffffffd6;
             padding: 2rem 1.5rem;
-            border: 1px solid #e2dacd;
+            border: 1px solid #e0d3c2;
             transition: all 0.25s;
             box-shadow: 0 5px 15px rgba(0,0,0,0.02);
         }
         .eco-item:hover {
-            background-color: #faf9f4;
-            border-color: #bfb39b;
-            box-shadow: 0 15px 25px -8px rgba(70, 60, 40, 0.1);
+            background-color: #fcfaf5;
+            border-color: #c1aa8e;
         }
         .eco-item a {
             font-family: 'Playfair Display', serif;
             font-size: 1.9rem;
             font-weight: 500;
             text-decoration: none;
-            color: #2b5126;
+            color: #2f5f6e;
             display: block;
             margin-bottom: 0.5rem;
             line-height: 1.2;
         }
         .eco-item .domain {
             font-size: 0.9rem;
-            color: #aa9f88;
+            color: #b19f84;
             text-transform: lowercase;
             font-family: monospace;
             letter-spacing: 0.5px;
             margin-bottom: 1rem;
-            border-bottom: 1px dashed #ddd6c8;
+            border-bottom: 1px dashed #ddd0be;
             padding-bottom: 0.7rem;
         }
         .eco-item p {
-            color: #475f41;
-            font-weight: 300;
+            color: #446573;
         }
 
-        /* philosophie zone avec petite icône visuelle */
+        /* philosophie */
         .philosophy-block {
             display: flex;
             flex-direction: column;
             gap: 1.8rem;
-            background: #f1ede5;
+            background: #f3ede5;
             padding: 2.5rem;
             margin: 2rem 0;
             border-radius: 1px;
-            box-shadow: inset 0 0 0 1px #ece4d7;
+            box-shadow: inset 0 0 0 1px #e9ddcf;
         }
         .philosophy-item {
             display: flex;
@@ -226,16 +257,16 @@
             font-size: 2.3rem;
             line-height: 1;
             opacity: 0.7;
-            color: #6e8664;
+            color: #b79774;
         }
 
-        /* contact revisité avec petite image (optionnelle) */
+        /* contact */
         .contact-section {
             display: flex;
             flex-wrap: wrap;
             justify-content: space-between;
             align-items: center;
-            background: #eae8de;
+            background: #eae1d7;
             padding: 2.5rem 2.8rem;
             margin: 3rem 0 1rem;
         }
@@ -251,25 +282,25 @@
         .contact-info li a {
             text-decoration: none;
             font-size: 1.3rem;
-            color: #2f4b2a;
-            border-bottom: 1px dotted #a5b594;
+            color: #2d5a6b;
+            border-bottom: 1px dotted #bcab94;
             font-family: 'Playfair Display', serif;
         }
         .contact-mini-img {
             width: 80px;
             height: 80px;
             border-radius: 50%;
-            background: #c7bc9f;
+            background: #c0aa8f;
             display: flex;
             align-items: center;
             justify-content: center;
-            color: #2d3f28;
+            color: #1e3a42;
             font-size: 0.8rem;
             text-align: center;
             padding: 0.5rem;
             border: 2px solid white;
             box-shadow: 0 6px 12px rgba(0,0,0,0.04);
-            background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="%23657a5a"><path d="M20 4H4c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/></svg>');
+            background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="%233f6778"><path d="M20 4H4c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/></svg>');
             background-size: 40px 40px;
             background-repeat: no-repeat;
             background-position: center;
@@ -280,19 +311,23 @@
             text-align: center;
             margin-top: 5rem;
             font-size: 0.85rem;
-            color: #acb99b;
+            color: #a4927c;
             letter-spacing: 1.5px;
         }
 
-        /* images generiques (placeholder libres) - on utilise unsplash ou代之 avec des couleurs douces mais on ajoute vraies photos */
-        .placeholder-img {
-            background-color: #cfc9b8;
-            border-radius: 2px;
+        /* textes multilingues (masqués par défaut) */
+        .lang-text {
+            display: none;
         }
-
-        /* animations AOS douces */
-        [data-aos] {
-            transition-timing-function: ease-out;
+        .lang-text.active {
+            display: block;
+        }
+        /* pour les éléments inline */
+        .lang-inline {
+            display: none;
+        }
+        .lang-inline.active {
+            display: inline;
         }
 
         /* responsive */
@@ -307,7 +342,7 @@
             .hero-tagline {
                 border-left: none;
                 padding-left: 0;
-                border-top: 2px solid #dacbb4;
+                border-top: 2px solid #ddc7ae;
                 padding-top: 1rem;
                 max-width: 400px;
                 margin-left: auto;
@@ -334,121 +369,143 @@
                 text-align: center;
                 display: block;
             }
+            .lang-selector {
+                justify-content: center;
+            }
         }
-
-        /* petites photos réelles (on utilise des placeholder mais ce sont de vraies images : on choisit des portraits libres) */
-        .portrait-hero, .portrait-founder {
-            background-size: cover;
-            background-position: center;
-        }
-        /* on va intégrer des photos via balises img mais en utilisant des urls libres (picsum / unsplash) avec des portraits approchants – ça reste élégant */
     </style>
 </head>
 <body>
     <div class="container">
 
-        <!-- navigation mise à jour -->
-        <div class="nav-bar" data-aos="fade-down" data-aos-duration="600">
-            <a href="#vision">Vision</a>
-            <a href="#ecosystem">Écosystème</a>
-            <a href="#philosophy">Philosophie</a>
-            <a href="#founder">Fondateur</a>
-            <a href="#contact">Contact</a>
+        <!-- SÉLECTEUR DE LANGUE (4 langues) -->
+        <div class="lang-selector">
+            <button onclick="switchLanguage('fr')" id="lang-fr" class="active">FR</button>
+            <button onclick="switchLanguage('en')" id="lang-en">EN</button>
+            <button onclick="switchLanguage('ar')" id="lang-ar">العربية</button>
+            <button onclick="switchLanguage('ber')" id="lang-ber">ⵜⴰⵎⴰⵣⵉⵖⵜ</button>
         </div>
 
-        <!-- HERO avec photo réelle (libre de droit) -->
-        <div class="hero-grid" data-aos="fade-up" data-aos-duration="800">
+        <!-- navigation -->
+        <div class="nav-bar" data-aos="fade-down">
+            <a href="#vision"><span class="lang-text fr active">Vision</span><span class="lang-text en">Vision</span><span class="lang-text ar">الرؤية</span><span class="lang-text ber">ⵜⴰⵎⴰⴽⵜ</span></a>
+            <a href="#ecosystem"><span class="lang-text fr active">Écosystème</span><span class="lang-text en">Ecosystem</span><span class="lang-text ar">النظام البيئي</span><span class="lang-text ber">ⴰⵏⴳⵔⴰⵡ</span></a>
+            <a href="#philosophy"><span class="lang-text fr active">Philosophie</span><span class="lang-text en">Philosophy</span><span class="lang-text ar">الفلسفة</span><span class="lang-text ber">ⵜⴰⴼⵍⵙⵓⴼⵜ</span></a>
+            <a href="#founder"><span class="lang-text fr active">Fondateur</span><span class="lang-text en">Founder</span><span class="lang-text ar">المؤسس</span><span class="lang-text ber">ⴰⵏⴱⴷⴰⵢ</span></a>
+            <a href="#contact"><span class="lang-text fr active">Contact</span><span class="lang-text en">Contact</span><span class="lang-text ar">اتصال</span><span class="lang-text ber">ⵜⴰⵏⵎⵎⵉⵜ</span></a>
+        </div>
+
+        <!-- HERO -->
+        <div class="hero-grid" data-aos="fade-up">
             <div class="hero-content">
                 <div class="hero-name">RIDA SAYAH</div>
                 <h1>DEENWAY</h1>
-                <div class="hero-tagline">Building a strong digital Islamic identity</div>
+                <div class="hero-tagline">
+                    <span class="lang-text fr active">Building a strong digital Islamic identity</span>
+                    <span class="lang-text en">Building a strong digital Islamic identity</span>
+                    <span class="lang-text ar">بناء هوية إسلامية رقمية قوية</span>
+                    <span class="lang-text ber">ⴰⴱⵏⵏⴰⵢ ⵏ ⵜⵓⵙⵙⵏⴰ ⵜⴰⵎⴰⵣⵉⵖⵜ ⵜⴰⵡⵏⵏⴰⵟⵜ</span>
+                </div>
             </div>
             <div class="hero-image">
-                <!-- photo moderne minimaliste : portrait d’homme discret (libre) -->
-                <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=400&q=80&auto=format&fit=crop" alt="Rida Sayah portrait" style="object-fit: cover; width: 300px; height: 300px;">
+                <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=400&q=80&auto=format&fit=crop" alt="Rida Sayah">
             </div>
         </div>
 
-        <!-- VISION avec image subtile en arrière plan texturé mais reste texte -->
+        <!-- VISION -->
         <section id="vision" data-aos="fade-up">
-            <h2>Vision</h2>
-            <div style="display: flex; flex-wrap: wrap; gap: 2rem; align-items: center; margin: 1rem 0 2rem;">
-                <div style="flex: 1; min-width: 260px;">
-                    <p style="font-size: 1.2rem;">Le monde numérique actuel manque d’espaces structurés dédiés à l’islam, où authenticité et clarté dominent. Plateaux saturés, distractions, absence de profondeur.</p>
-                    <p style="font-size: 1.2rem; margin-top: 1rem;"><span style="font-family: 'Playfair Display';">DEENWAY</span> tisse une toile cohérente : un écosystème islamique moderne, sobre et fiable. Objectif : une identité numérique forte pour la oumma, enracinée dans la tradition mais aux interfaces épurées.</p>
+            <h2><span class="lang-text fr active">Vision</span><span class="lang-text en">Vision</span><span class="lang-text ar">الرؤية</span><span class="lang-text ber">ⵜⴰⵎⴰⴽⵜ</span></h2>
+            <div style="display: flex; flex-wrap: wrap; gap: 2rem; align-items: center;">
+                <div style="flex: 1;">
+                    <p class="lang-text fr active">Le monde numérique actuel manque d'espaces structurés dédiés à l'islam, où authenticité et clarté dominent. DEENWAY tisse une toile cohérente : un écosystème islamique moderne, sobre et fiable.</p>
+                    <p class="lang-text en">Today's digital world lacks structured spaces dedicated to Islam, where authenticity and clarity dominate. DEENWAY weaves a coherent fabric: a modern, sober and reliable Islamic ecosystem.</p>
+                    <p class="lang-text ar">يفتقر العالم الرقمي الحالي إلى مساحات منظمة مخصصة للإسلام، حيث تسود الأصالة والوضوح. تنسج DEENWAY نسيجًا متماسكًا: نظام بيئي إسلامي حديث ورصين وموثوق.</p>
+                    <p class="lang-text ber">ⵓⵔ ⵉⵍⵍⵉ ⵖ ⵓⵎⴰⴹⴰⵍ ⴰⵟⵟⴰⵏ ⵏ ⵉⴷⵍⵉⵙⵏ ⵉⵎⵙⵜⵓⵔⵏ ⵉ ⵍⴻⵙⵍⴰⵎ, ⵉⵖ ⵜⵓⴳⵜ ⵜⴰⵏⴰⵎⵎⴰⵙⵜ ⴷ ⵜⵓⴼⵜ. DEENWAY ⵜⴰⵔⵔⴰ ⵢⴰⵏ ⵓⵏⴳⵔⴰⵡ ⴰⵟⵟⴰⵏ ⴰⵎⴰⵢⵏⵓ, ⴰⵎⵙⴷⵙ, ⴷ ⵓⵎⵏⵉⵔ.</p>
                 </div>
-                <!-- photo évocatrice (architecture douce) -->
                 <div style="flex: 0 0 150px;">
-                    <img src="https://images.unsplash.com/photo-1585829365295-f3f6b5c2c8a7?w=200&q=80&auto=format&fit=crop" alt="spiritual digital" style="width: 100%; border-radius: 30% 10% 30% 10%; opacity: 0.9; box-shadow: 0 18px 30px -12px #b9ae9a;">
+                    <img src="https://images.unsplash.com/photo-1585829365295-f3f6b5c2c8a7?w=200&q=80&auto=format&fit=crop" alt="spiritual" style="width:100%; border-radius:30% 10% 30% 10%;">
                 </div>
             </div>
-            <div class="soft-quote" style="font-size: 2rem; font-family: 'Playfair Display'; color: #6d8764; border-left: 4px solid #b9ad90; padding-left: 2rem; margin: 2rem 0;">« Le digital au service du spirituel, sans distraction. »</div>
         </section>
 
-        <!-- ÉCOSYSTÈME avec cartes modernes -->
+        <!-- ÉCOSYSTÈME -->
         <section id="ecosystem" data-aos="fade-up">
-            <h2>Écosystème DEENWAY</h2>
+            <h2><span class="lang-text fr active">Écosystème DEENWAY</span><span class="lang-text en">DEENWAY Ecosystem</span><span class="lang-text ar">النظام البيئي</span><span class="lang-text ber">ⴰⵏⴳⵔⴰⵡ DEENWAY</span></h2>
             <div class="ecosystem-grid">
-                <div class="eco-item" data-aos="zoom-in" data-aos-delay="100">
-                    <a href="https://quran.ondeenway.org" target="_blank">DEENWAY Quran</a>
+                <!-- cartes inchangées mais les descriptions seront gérées en JS pour la simplicité -->
+                <div class="eco-item" data-aos="zoom-in">
+                    <a href="https://quran.ondeenway.org">DEENWAY Quran</a>
                     <div class="domain">quran.ondeenway.org</div>
-                    <p>Lecture et méditation du Coran, interface épurée pour se concentrer sur la parole divine.</p>
+                    <p class="lang-text fr active">Lecture et méditation du Coran, interface épurée.</p>
+                    <p class="lang-text en">Quran reading and meditation, clean interface.</p>
+                    <p class="lang-text ar">قراءة وتدبر القرآن، واجهة نظيفة.</p>
+                    <p class="lang-text ber">ⵜⵉⵖⵔⵉ ⴷ ⵓⵎⵓⵙⵙⵓ ⵏ ⵍⵇⵓⵔⴰⵏ, ⵉⴼⵉⵍⴰ ⵉⵣⵣⵉⵍⵏ.</p>
+                </div>
+                <div class="eco-item" data-aos="zoom-in" data-aos-delay="100">
+                    <a href="https://hadith.ondeenway.org">DEENWAY Hadith</a>
+                    <div class="domain">hadith.ondeenway.org</div>
+                    <p class="lang-text fr active">Accès aux recueils authentiques de la Sunna.</p>
+                    <p class="lang-text en">Access to authentic Hadith collections.</p>
+                    <p class="lang-text ar">الوصول إلى مجموعات الحديث الصحيحة.</p>
+                    <p class="lang-text ber">ⴰⴽⵛⵛⵓⵎ ⵖⵔ ⵉⴷⵍⵉⵙⵏ ⵉⵎⴰⴹⵍⴰⵏⵏ ⵏ ⵍⵃⴰⴷⵉⵜ.</p>
                 </div>
                 <div class="eco-item" data-aos="zoom-in" data-aos-delay="200">
-                    <a href="https://hadith.ondeenway.org" target="_blank">DEENWAY Hadith</a>
-                    <div class="domain">hadith.ondeenway.org</div>
-                    <p>Accès aux recueils authentiques de la Sunna, structurés pour l’étude quotidienne.</p>
+                    <a href="https://seerah.ondeenway.org">DEENWAY Seerah</a>
+                    <div class="domain">seerah.ondeenway.org</div>
+                    <p class="lang-text fr active">La biographie du Prophète ﷺ racontée avec clarté.</p>
+                    <p class="lang-text en">The Prophet's ﷺ biography told with clarity.</p>
+                    <p class="lang-text ar">سيرة النبي ﷺ تُروى بوضوح.</p>
+                    <p class="lang-text ber">ⵜⴰⵎⴷⴷⵓⵔⵜ ⵏ ⵏⴱⵉ ⵏⵏⵖ ﷺ ⵜⵓⵎⵍ ⵙ ⵜⵓⴼⵜ.</p>
                 </div>
                 <div class="eco-item" data-aos="zoom-in" data-aos-delay="300">
-                    <a href="https://seerah.ondeenway.org" target="_blank">DEENWAY Seerah</a>
-                    <div class="domain">seerah.ondeenway.org</div>
-                    <p>La biographie du Prophète ﷺ racontée avec clarté, pour s’imprégner de sa lumière.</p>
-                </div>
-                <div class="eco-item" data-aos="zoom-in" data-aos-delay="400">
-                    <a href="https://azkar.ondeenway.org" target="_blank">DEENWAY Azkar</a>
+                    <a href="https://azkar.ondeenway.org">DEENWAY Azkar</a>
                     <div class="domain">azkar.ondeenway.org</div>
-                    <p>Invocations matin et soir, tirées des sources sûres, dans un format apaisant.</p>
+                    <p class="lang-text fr active">Invocations matin et soir, sources sûres.</p>
+                    <p class="lang-text en">Morning and evening invocations from authentic sources.</p>
+                    <p class="lang-text ar">أذكار الصباح والمساء من مصادر موثوقة.</p>
+                    <p class="lang-text ber">ⵉⴷⵅⵉⵔⵏ ⵏ ⵜⵉⴼⴰⵡⵉⵏ ⴷ ⵜⵉⵎⴷⴷⵓⵜⵉⵏ ⵙ ⵉⵖⴱⵓⵍⴰ ⵉⵎⵏⵉⵔⵏ.</p>
                 </div>
             </div>
         </section>
 
-        <!-- PHILOSOPHIE enrichie avec icônes texte -->
+        <!-- PHILOSOPHIE -->
         <section id="philosophy" data-aos="fade-up">
-            <h2>Philosophie</h2>
+            <h2><span class="lang-text fr active">Philosophie</span><span class="lang-text en">Philosophy</span><span class="lang-text ar">الفلسفة</span><span class="lang-text ber">ⵜⴰⴼⵍⵙⵓⴼⵜ</span></h2>
             <div class="philosophy-block">
-                <div class="philosophy-item" data-aos="fade-right">
+                <div class="philosophy-item">
                     <span class="phil-icon">⏺</span>
-                    <div><strong style="font-size: 1.3rem;">Pureté du contenu.</strong> Rien de superflu. Les textes parlent d’eux-mêmes, les interfaces s’effacent. L’utilisateur doit ressentir le sacré sans filtre inutile.</div>
+                    <div><strong>Pureté du contenu.</strong> <span class="lang-text fr active">Rien de superflu. Les textes parlent d'eux-mêmes.</span><span class="lang-text en">Nothing superfluous. The texts speak for themselves.</span><span class="lang-text ar">لا شيء زائد عن الحاجة. النصوص تتحدث عن نفسها.</span><span class="lang-text ber">ⵓⵔ ⵉⵍⵍⵉ ⵓⵎⴰⵜⴰ. ⵉⴷⵍⵉⵙⵏ ⵙⵙⴰⵡⴰⵍⵏ ⵉⵎⴰⵏⵏⵙⵏ.</span></div>
                 </div>
-                <div class="philosophy-item" data-aos="fade-right" data-aos-delay="100">
+                <div class="philosophy-item">
                     <span class="phil-icon">◈</span>
-                    <div><strong style="font-size: 1.3rem;">Simplicité & focus.</strong> Moins de choix, plus de sens. Chaque outil DEENWAY a une seule fonction : rapprocher de la source.</div>
+                    <div><strong>Simplicité & focus.</strong> <span class="lang-text fr active">Moins de choix, plus de sens.</span><span class="lang-text en">Less choice, more meaning.</span><span class="lang-text ar">خيارات أقل، معنى أكثر.</span><span class="lang-text ber">ⴷⵔⵓⵙ ⵏ ⵜⴼⵔⵏⵉⵡⵉⵏ, ⵓⴳⴳⴰⵔ ⵏ ⵜⵏⵖⴰ.</span></div>
                 </div>
-                <div class="philosophy-item" data-aos="fade-right" data-aos-delay="150">
+                <div class="philosophy-item">
                     <span class="phil-icon">◇</span>
-                    <div><strong style="font-size: 1.3rem;">Authenticité.</strong> Les références, les adhkar, les récits sont vérifiés. Rien n’est laissé au hasard. L’écosystème veut redevenir un terrain sûr pour l’âme connectée.</div>
+                    <div><strong>Authenticité.</strong> <span class="lang-text fr active">Références vérifiées. Rien n'est laissé au hasard.</span><span class="lang-text en">Verified references. Nothing left to chance.</span><span class="lang-text ar">مراجع موثقة. لا شيء يترك للصدفة.</span><span class="lang-text ber">ⵉⵖⴱⵓⵍⴰ ⵉⵜⵜⵓⵙⵙⴻⵏ. ⵓⵔ ⵉⵇⵇⴰⴷⴰ ⵢⴰⵏ ⵓⵎⴰⵜⴰ.</span></div>
                 </div>
             </div>
         </section>
 
-        <!-- FONDATEUR avec photo (2e portrait) -->
+        <!-- FONDATEUR -->
         <section id="founder" data-aos="fade-up">
-            <h2>Rida Sayah · fondateur</h2>
+            <h2><span class="lang-text fr active">Rida Sayah · fondateur</span><span class="lang-text en">Rida Sayah · founder</span><span class="lang-text ar">رضا صيّاح · المؤسس</span><span class="lang-text ber">ⵔⵉⴷⴰ ⵙⴰⵢⴰⵃ · ⴰⵏⴱⴷⴰⵢ</span></h2>
             <div class="founder-card">
                 <div class="founder-img">
-                    <!-- portrait différent mais discret -->
                     <img src="https://images.unsplash.com/photo-1492562080023-ab3db95bfbce?w=200&q=80&auto=format&fit=crop" alt="Rida Sayah">
                 </div>
                 <div class="founder-bio">
-                    <p>D’abord développeur, ensuite chercheur de sens. Rida a ressenti le vide des espaces numériques actuels pour les pratiques islamiques. L’idée de DEENWAY a germé d’un constat simple : le savoir et la spiritualité méritent un contenant à leur mesure — épuré, digne, accessible.</p>
-                    <p style="margin-top: 0.8rem;">Motivation profonde : offrir une identité digitale forte à l’islam, où chaque projet (Quran, hadith, seerah, azkar) soit une pierre posée avec cohérence. Vision long terme : un écosystème complet, sans publicité ni distraction.</p>
+                    <p class="lang-text fr active">Développeur, chercheur de sens. L'idée de DEENWAY germe d'un constat simple : le savoir et la spiritualité méritent un contenant épuré, digne, accessible.</p>
+                    <p class="lang-text en">Developer, seeker of meaning. The idea of DEENWAY grew from a simple observation: knowledge and spirituality deserve a clean, dignified, accessible container.</p>
+                    <p class="lang-text ar">مطور، باحث عن المعنى. فكرة DEENWAY نبتت من ملاحظة بسيطة: المعرفة والروحانية تستحقان وعاءً نظيفًا وكريمًا وسهل الوصول.</p>
+                    <p class="lang-text ber">ⴰⵏⵙⵙⵉⵅⴼ ⵏ ⵓⵙⵉⵜⵉ, ⴰⵎⴰⴽⵔⴰⵢ ⵏ ⵜⵏⵖⴰ. ⵜⴰⵏⴳⴳⴰⵔⵜ ⵏ DEENWAY ⵜⴻⵜⵜⵓⵙⴽⴰⵔ ⵙⴳ ⵢⴰⵏ ⵓⵙⵙⵉⴷⵔ ⴰⵀⵉⵍ: ⵜⵓⵙⵙⵏⴰ ⴷ ⵜⴰⴷⵊⵊⴰⵏⵉⵜ ⵙⴻⵏⵜ ⵉⵅⵙⵙⵏ ⴰⵡⵏⴳⵉⵎ ⵉⵣⵣⵉⵍⵏ, ⵉⴽⵔⵎⵏ, ⵉⵍⵍⵓⵏ.</p>
                 </div>
             </div>
         </section>
 
-        <!-- CONTACT avec petite image symbolique -->
+        <!-- CONTACT -->
         <section id="contact" data-aos="fade-up">
-            <h2>Contact & liens</h2>
+            <h2><span class="lang-text fr active">Contact & liens</span><span class="lang-text en">Contact & links</span><span class="lang-text ar">الاتصال والروابط</span><span class="lang-text ber">ⵜⴰⵏⵎⵎⵉⵜ ⴷ ⵉⵙⵖⵓⵏⵏ</span></h2>
             <div class="contact-section">
                 <div class="contact-info">
                     <ul>
@@ -456,29 +513,65 @@
                         <li><a href="#">✧ @deeenway (X)</a></li>
                         <li><a href="#">✧ github/deenway</a></li>
                     </ul>
-                    <p style="margin-top: 1.5rem; color:#475f41;">Une question, une suggestion, une prière ? Écrivez – je lis personnellement.</p>
+                    <p style="margin-top: 1.5rem;">
+                        <span class="lang-text fr active">Une question, une suggestion, une prière ? Écrivez – je lis personnellement.</span>
+                        <span class="lang-text en">A question, a suggestion, a prayer? Write – I read personally.</span>
+                        <span class="lang-text ar">سؤال، اقتراح، دعوة؟ اكتبوا – أقرأ شخصيًا.</span>
+                        <span class="lang-text ber">ⵢⴰⵜ ⵜⴰⵇⵙⵉⵜ, ⵢⴰⵏ ⵓⵙⵓⵎⵔ, ⵢⴰⵜ ⵜⴰⴷⵊⵊⴰⵏⵉⵜ? ⴰⵔⵓ – ⵜⵜⵖⵔⵉⵖ ⵙ ⵉⵎⴰⵏⵉⵡ.</span>
+                    </p>
                 </div>
-                <div class="contact-mini-img" title="deenway"></div>
+                <div class="contact-mini-img"></div>
             </div>
         </section>
 
-        <hr style="border:0; border-top:1px solid #e3d9cc; width: 30%; margin: 3rem auto;">
-
-        <div class="footer-note">
-            DEENWAY · une empreinte sobre · 2025
-        </div>
+        <hr style="border:0; border-top:1px solid #ddcfbe; width:30%; margin:3rem auto;">
+        <div class="footer-note">DEENWAY · 2025</div>
     </div>
 
-    <!-- AOS animation library script (léger) -->
+    <!-- AOS -->
     <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
     <script>
-        AOS.init({
-            duration: 700,
-            once: true,
-            offset: 40,
-            easing: 'ease-out-quad'
-        });
+        AOS.init({ duration: 700, once: true, offset: 40 });
+
+        // Système multilingue (4 langues)
+        function switchLanguage(lang) {
+            // Mettre à jour les boutons
+            document.querySelectorAll('.lang-selector button').forEach(btn => {
+                btn.classList.remove('active');
+            });
+            document.getElementById('lang-' + lang).classList.add('active');
+
+            // Cacher tous les éléments lang-text
+            document.querySelectorAll('.lang-text').forEach(el => {
+                el.classList.remove('active');
+            });
+
+            // Afficher ceux de la langue sélectionnée
+            document.querySelectorAll('.lang-text.' + lang).forEach(el => {
+                el.classList.add('active');
+            });
+
+            // Gérer les éléments inline si nécessaire (déjà fait via .lang-text)
+            // Pour le héros, déjà géré car dans des span avec classes
+            // Pour la direction RTL si arabe (optionnel)
+            if (lang === 'ar') {
+                document.body.style.direction = 'rtl';
+                // ajuster les after
+                document.querySelectorAll('h2:after').forEach(el => {
+                    el.style.left = 'auto';
+                    el.style.right = '0';
+                });
+            } else {
+                document.body.style.direction = 'ltr';
+                document.querySelectorAll('h2:after').forEach(el => {
+                    el.style.right = 'auto';
+                    el.style.left = '0';
+                });
+            }
+        }
+
+        // Initialiser avec le français
+        switchLanguage('fr');
     </script>
-    <!-- pas d'autre JS, seulement pour animations douces -->
 </body>
 </html>
