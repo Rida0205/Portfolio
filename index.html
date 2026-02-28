@@ -3,9 +3,11 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Rida Sayah · DEENWAY</title>
+    <title>Rida Sayah · DEENWAY · nouveau design</title>
+    <!-- Google fonts & subtle animation library (AOS) -->
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600&family=Playfair+Display:ital,wght@0,500;0,600;1,400&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
     <style>
-        /* ----- RESET & BASE ----- */
         * {
             margin: 0;
             padding: 0;
@@ -13,366 +15,470 @@
         }
 
         body {
-            background-color: #fbfaf6;   /* blanc cassé doux */
-            color: #2f3e2c;               /* vert olive profond mais doux */
-            font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
-            line-height: 1.6;
+            background-color: #f9f7f2;  /* beige doux lumineux */
+            color: #2b3b2b;
+            font-family: 'Outfit', sans-serif;
             font-weight: 300;
-            font-size: 1rem;
-            -webkit-font-smoothing: antialiased;
-            -moz-osx-font-smoothing: grayscale;
+            line-height: 1.6;
+            scroll-behavior: smooth;
         }
 
-        /* serif moderne pour accents spirituels */
-        h1, h2, h3, .serif {
-            font-family: 'Cormorant Garamond', 'Times New Roman', serif;
-            font-weight: 400;
-            letter-spacing: -0.01em;
+        /* typographie élégante */
+        h1, h2, h3, .serif-display {
+            font-family: 'Playfair Display', serif;
+            font-weight: 500;
+            letter-spacing: -0.02em;
         }
 
-        .container {
-            max-width: 1000px;
-            margin: 0 auto;
-            padding: 2rem 2rem;
-        }
-
-        /* ----- TYPOGRAPHIE DOUCE ----- */
         h1 {
-            font-size: clamp(3rem, 10vw, 5rem);
+            font-size: clamp(3.5rem, 12vw, 6rem);
             line-height: 1.1;
-            color: #2b3b2a;          /* olive légèrement plus présent */
-            margin-bottom: 0.5rem;
-            font-weight: 450;
+            color: #1d3b1a;
+            margin-bottom: 0.3rem;
         }
 
         h2 {
-            font-size: clamp(2rem, 6vw, 3rem);
-            border-bottom: 1px solid rgba(156, 165, 139, 0.2); /* gris vert pâle */
-            padding-bottom: 0.5rem;
-            margin-bottom: 2rem;
-            font-weight: 400;
-            color: #41533b;
+            font-size: clamp(2.5rem, 7vw, 3.8rem);
+            color: #2e4f2b;
+            margin-bottom: 1.2rem;
+            position: relative;
+            display: inline-block;
+        }
+        h2:after {
+            content: '';
+            position: absolute;
+            bottom: -6px;
+            left: 0;
+            width: 70px;
+            height: 2px;
+            background: #b6ab8e;
         }
 
         h3 {
-            font-size: 1.8rem;
-            margin-bottom: 1rem;
-            color: #3f5a3a;
-            font-weight: 450;
+            font-size: 2rem;
+            color: #42633b;
+            margin-bottom: 0.5rem;
         }
 
-        .subhead {
-            font-size: 1.3rem;
-            font-family: 'Inter', sans-serif;
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 1.5rem 2rem 3rem;
+        }
+
+        /* --- navigation revisitée --- */
+        .nav-bar {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 2.5rem;
+            padding: 1.8rem 0 2.2rem;
             font-weight: 300;
-            color: #7b8a70;           /* vert-gris doux */
-            margin-bottom: 2rem;
-            letter-spacing: 0.3px;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            font-size: 0.9rem;
+            border-bottom: 1px solid rgba(151, 141, 118, 0.2);
+        }
+        .nav-bar a {
+            text-decoration: none;
+            color: #5a7152;
+            transition: color 0.2s;
+        }
+        .nav-bar a:hover {
+            color: #1f3c1c;
         }
 
-        /* ----- PALETTE & ÉLÉMENTS ----- */
-        .soft-beige {
-            background-color: #f6f3eb;   /* beige très doux pour alternance */
+        /* --- hero avec photo et texte --- */
+        .hero-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            align-items: center;
+            gap: 3rem;
+            margin: 2rem 0 4rem;
+        }
+        .hero-content {
+            padding-right: 1rem;
+        }
+        .hero-name {
+            font-size: 1.4rem;
+            letter-spacing: 4px;
+            text-transform: uppercase;
+            color: #9f8d71;
+            margin-bottom: 0.2rem;
+            font-weight: 300;
+        }
+        .hero-tagline {
+            font-size: 1.6rem;
+            font-family: 'Playfair Display', serif;
+            color: #6a7f60;
+            font-style: italic;
+            margin-top: 1rem;
+            border-left: 3px solid #dacbb4;
+            padding-left: 1.5rem;
+        }
+        .hero-image {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        .hero-image img {
+            max-width: 100%;
+            width: 320px;
+            height: auto;
+            border-radius: 50% 50% 30% 50%;
+            box-shadow: 30px 30px 40px rgba(0,0,0,0.03), 10px 10px 20px rgba(90, 80, 60, 0.05);
+            filter: sepia(8%) saturate(80%);
+            border: 2px solid #f1ede3;
+            transition: transform 0.3s ease;
+        }
+        .hero-image img:hover {
+            transform: scale(1.01);
         }
 
-        hr {
-            border: 0;
-            height: 1px;
-            background: linear-gradient(90deg, transparent, #cdd6c5, transparent);
-            margin: 2.5rem 0;
-            width: 40%;
-            margin-left: auto;
-            margin-right: auto;
-        }
-
-        /* navigation minimale */
-        .nav-links {
+        /* carte fondateur avec photo */
+        .founder-card {
             display: flex;
             flex-wrap: wrap;
-            gap: 2rem;
-            justify-content: center;
-            margin: 2rem 0 3rem 0;
-            font-size: 1rem;
-            text-transform: uppercase;
-            letter-spacing: 3px;
-            font-weight: 300;
-            color: #8b9a7e;
+            background: #f3efe7;
+            padding: 2.5rem 2rem;
+            border-radius: 2px;
+            gap: 2.5rem;
+            align-items: center;
+            margin: 2.5rem 0;
+            border-left: 5px solid #cfc4aa;
+        }
+        .founder-img {
+            flex: 0 0 150px;
+        }
+        .founder-img img {
+            width: 100%;
+            height: auto;
+            border-radius: 50%;
+            filter: grayscale(20%) contrast(1.02);
+            box-shadow: 0 10px 20px rgba(70, 60, 40, 0.08);
+        }
+        .founder-bio {
+            flex: 1;
+            font-size: 1.1rem;
         }
 
-        .nav-links span {
-            color: #b9c4ae;
-            font-size: 0.9rem;
-        }
-
-        /* cartes écosystème : sobres, aérées */
+        /* ecosysteme : design plus moderne */
         .ecosystem-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-            gap: 2rem;
-            margin: 2rem 0 1rem;
+            grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+            gap: 1.8rem;
+            margin: 3rem 0;
         }
-
-        .eco-card {
-            background: rgba(255,255,255,0.5);
-            padding: 1.8rem 1.2rem;
-            border-radius: 0px;        /* pas de coins arrondis, minimal */
-            border-top: 1px solid #e2e2d6;
-            border-bottom: 1px solid #e2e2d6;
-            transition: all 0.1s ease;
+        .eco-item {
+            background-color: #ffffffd6;
+            padding: 2rem 1.5rem;
+            border: 1px solid #e2dacd;
+            transition: all 0.25s;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.02);
         }
-
-        .eco-card p {
-            color: #5c6b53;
-            font-size: 0.95rem;
-            margin-top: 0.8rem;
+        .eco-item:hover {
+            background-color: #faf9f4;
+            border-color: #bfb39b;
+            box-shadow: 0 15px 25px -8px rgba(70, 60, 40, 0.1);
         }
-
-        .eco-card a {
-            font-family: 'Cormorant Garamond', serif;
-            font-size: 1.6rem;
+        .eco-item a {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.9rem;
+            font-weight: 500;
             text-decoration: none;
-            color: #2e4a2b;
-            font-weight: 450;
-            word-break: break-word;
+            color: #2b5126;
+            display: block;
+            margin-bottom: 0.5rem;
+            line-height: 1.2;
         }
-
-        .eco-card a:hover {
-            text-decoration: underline;
-            text-decoration-color: #abb89e;
-            text-underline-offset: 4px;
-        }
-
-        .domain-note {
+        .eco-item .domain {
             font-size: 0.9rem;
-            color: #9aab8b;
-            margin-top: 0.3rem;
-            font-style: italic;
+            color: #aa9f88;
+            text-transform: lowercase;
+            font-family: monospace;
+            letter-spacing: 0.5px;
+            margin-bottom: 1rem;
+            border-bottom: 1px dashed #ddd6c8;
+            padding-bottom: 0.7rem;
         }
-
-        /* sections texte purs */
-        .vision-text, .philosophy-text, .bio-text {
-            font-size: 1.2rem;
-            max-width: 720px;
-            margin-left: auto;
-            margin-right: auto;
-            color: #3c4d37;
-        }
-
-        .vision-text p, .philosophy-text p, .bio-text p {
-            margin-bottom: 1.5rem;
-        }
-
-        .soft-quote {
-            font-family: 'Cormorant Garamond', serif;
-            font-size: 2rem;
-            line-height: 1.3;
-            color: #5b7354;
-            margin: 2rem 0;
-            text-align: center;
-        }
-
-        /* contact simple liste */
-        .contact-list {
-            list-style: none;
-            display: flex;
-            flex-wrap: wrap;
-            justify-content: center;
-            gap: 2.5rem;
-            margin: 2.5rem 0 1.5rem;
-            padding: 0;
-            font-size: 1.2rem;
-        }
-
-        .contact-list li a {
-            text-decoration: none;
-            color: #4b6043;
-            border-bottom: 1px dotted #cbd2bf;
-            padding-bottom: 2px;
-        }
-
-        .contact-list li a:hover {
-            border-bottom: 1px solid #5a7152;
-            color: #1e2e1b;
-        }
-
-        .footer-note {
-            text-align: center;
-            margin-top: 4rem;
-            font-size: 0.9rem;
-            color: #b6c2aa;
-            letter-spacing: 1px;
-        }
-
-        /* espacement élégant */
-        .section {
-            padding: 2rem 0 3rem 0;
-        }
-
-        .section + .section {
-            border-top: 1px solid rgba(184, 176, 152, 0.2);
-        }
-
-        /* responsive petits ecrans */
-        @media (max-width: 600px) {
-            .container {
-                padding: 1.5rem 1.2rem;
-            }
-            .nav-links {
-                gap: 1rem;
-                font-size: 0.85rem;
-                letter-spacing: 2px;
-            }
-            .ecosystem-grid {
-                grid-template-columns: 1fr;
-                gap: 1.2rem;
-            }
-            .contact-list {
-                flex-direction: column;
-                align-items: center;
-                gap: 1rem;
-            }
-            h1 {
-                font-size: clamp(2.5rem, 12vw, 4rem);
-            }
-        }
-
-        /* tablette ajustements */
-        @media (min-width: 601px) and (max-width: 900px) {
-            .container {
-                padding: 2rem 2.5rem;
-            }
-        }
-
-        /* héros spécifique */
-        .hero {
-            text-align: center;
-            margin: 2rem 0 3rem 0;
-        }
-
-        .hero p {
-            font-size: 1.5rem;
-            font-family: 'Cormorant Garamond', serif;
-            color: #859b7a;
-            max-width: 600px;
-            margin: 0.5rem auto 0;
-            border-top: 1px solid #eae6da;
-            padding-top: 1rem;
-        }
-
-        .name {
-            font-size: 2rem;
-            letter-spacing: 5px;
-            text-transform: uppercase;
-            color: #9eae8e;
-            margin-bottom: 0;
-            font-family: 'Inter', sans-serif;
+        .eco-item p {
+            color: #475f41;
             font-weight: 300;
         }
+
+        /* philosophie zone avec petite icône visuelle */
+        .philosophy-block {
+            display: flex;
+            flex-direction: column;
+            gap: 1.8rem;
+            background: #f1ede5;
+            padding: 2.5rem;
+            margin: 2rem 0;
+            border-radius: 1px;
+            box-shadow: inset 0 0 0 1px #ece4d7;
+        }
+        .philosophy-item {
+            display: flex;
+            gap: 1.5rem;
+            align-items: flex-start;
+        }
+        .phil-icon {
+            font-size: 2.3rem;
+            line-height: 1;
+            opacity: 0.7;
+            color: #6e8664;
+        }
+
+        /* contact revisité avec petite image (optionnelle) */
+        .contact-section {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            align-items: center;
+            background: #eae8de;
+            padding: 2.5rem 2.8rem;
+            margin: 3rem 0 1rem;
+        }
+        .contact-info {
+            flex: 1;
+        }
+        .contact-info ul {
+            list-style: none;
+            display: flex;
+            flex-direction: column;
+            gap: 1rem;
+        }
+        .contact-info li a {
+            text-decoration: none;
+            font-size: 1.3rem;
+            color: #2f4b2a;
+            border-bottom: 1px dotted #a5b594;
+            font-family: 'Playfair Display', serif;
+        }
+        .contact-mini-img {
+            width: 80px;
+            height: 80px;
+            border-radius: 50%;
+            background: #c7bc9f;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #2d3f28;
+            font-size: 0.8rem;
+            text-align: center;
+            padding: 0.5rem;
+            border: 2px solid white;
+            box-shadow: 0 6px 12px rgba(0,0,0,0.04);
+            background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="%23657a5a"><path d="M20 4H4c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/></svg>');
+            background-size: 40px 40px;
+            background-repeat: no-repeat;
+            background-position: center;
+        }
+
+        /* footer */
+        .footer-note {
+            text-align: center;
+            margin-top: 5rem;
+            font-size: 0.85rem;
+            color: #acb99b;
+            letter-spacing: 1.5px;
+        }
+
+        /* images generiques (placeholder libres) - on utilise unsplash ou代之 avec des couleurs douces mais on ajoute vraies photos */
+        .placeholder-img {
+            background-color: #cfc9b8;
+            border-radius: 2px;
+        }
+
+        /* animations AOS douces */
+        [data-aos] {
+            transition-timing-function: ease-out;
+        }
+
+        /* responsive */
+        @media (max-width: 750px) {
+            .hero-grid {
+                grid-template-columns: 1fr;
+                text-align: center;
+            }
+            .hero-content {
+                padding-right: 0;
+            }
+            .hero-tagline {
+                border-left: none;
+                padding-left: 0;
+                border-top: 2px solid #dacbb4;
+                padding-top: 1rem;
+                max-width: 400px;
+                margin-left: auto;
+                margin-right: auto;
+            }
+            .founder-card {
+                flex-direction: column;
+                text-align: center;
+            }
+            .contact-section {
+                flex-direction: column;
+                gap: 1.8rem;
+                text-align: center;
+            }
+            .nav-bar {
+                gap: 1.3rem;
+            }
+            h2:after {
+                left: 50%;
+                transform: translateX(-50%);
+                width: 50px;
+            }
+            h2 {
+                text-align: center;
+                display: block;
+            }
+        }
+
+        /* petites photos réelles (on utilise des placeholder mais ce sont de vraies images : on choisit des portraits libres) */
+        .portrait-hero, .portrait-founder {
+            background-size: cover;
+            background-position: center;
+        }
+        /* on va intégrer des photos via balises img mais en utilisant des urls libres (picsum / unsplash) avec des portraits approchants – ça reste élégant */
     </style>
 </head>
 <body>
     <div class="container">
-        <!-- navigation minimale (ancres statiques, sans js) -->
-        <div class="nav-links">
-            <span>✦</span> <a href="#vision" style="text-decoration: none; color: inherit;">VISION</a> <span>✦</span>
-            <a href="#ecosystem" style="text-decoration: none; color: inherit;">ÉCOSYSTÈME</a> <span>✦</span>
-            <a href="#philosophy" style="text-decoration: none; color: inherit;">PHILOSOPHIE</a> <span>✦</span>
-            <a href="#founder" style="text-decoration: none; color: inherit;">FONDATEUR</a> <span>✦</span>
-            <a href="#contact" style="text-decoration: none; color: inherit;">CONTACT</a> <span>✦</span>
+
+        <!-- navigation mise à jour -->
+        <div class="nav-bar" data-aos="fade-down" data-aos-duration="600">
+            <a href="#vision">Vision</a>
+            <a href="#ecosystem">Écosystème</a>
+            <a href="#philosophy">Philosophie</a>
+            <a href="#founder">Fondateur</a>
+            <a href="#contact">Contact</a>
         </div>
 
-        <!-- HERO / ACCUEIL -->
-        <div class="hero">
-            <div class="name">RIDA SAYAH</div>
-            <h1>DEENWAY</h1>
-            <p>Building a strong digital Islamic identity</p>
-        </div>
-
-        <!-- VISION SECTION -->
-        <section id="vision" class="section">
-            <h2>Vision</h2>
-            <div class="vision-text">
-                <p>Le monde numérique actuel manque d’espaces structurés dédiés à l’islam, où authenticité et clarté dominent. Les plateaux saturés, les distractions et l’absence de profondeur nous éloignent d’une présence digitale sincère.</p>
-                <p><span class="serif" style="font-size:1.5rem;">DEENWAY</span> est né pour tisser une toile cohérente : un écosystème islamique moderne, sobre et fiable. Chaque projet reflète la pureté du message, sans artifice. L’objectif global est de construire une identité numérique forte pour la oumma, enracinée dans la tradition mais aux interfaces épurées.</p>
-                <div class="soft-quote">« Le digital au service du spirituel, sans distraction. »</div>
+        <!-- HERO avec photo réelle (libre de droit) -->
+        <div class="hero-grid" data-aos="fade-up" data-aos-duration="800">
+            <div class="hero-content">
+                <div class="hero-name">RIDA SAYAH</div>
+                <h1>DEENWAY</h1>
+                <div class="hero-tagline">Building a strong digital Islamic identity</div>
             </div>
+            <div class="hero-image">
+                <!-- photo moderne minimaliste : portrait d’homme discret (libre) -->
+                <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=400&q=80&auto=format&fit=crop" alt="Rida Sayah portrait" style="object-fit: cover; width: 300px; height: 300px;">
+            </div>
+        </div>
+
+        <!-- VISION avec image subtile en arrière plan texturé mais reste texte -->
+        <section id="vision" data-aos="fade-up">
+            <h2>Vision</h2>
+            <div style="display: flex; flex-wrap: wrap; gap: 2rem; align-items: center; margin: 1rem 0 2rem;">
+                <div style="flex: 1; min-width: 260px;">
+                    <p style="font-size: 1.2rem;">Le monde numérique actuel manque d’espaces structurés dédiés à l’islam, où authenticité et clarté dominent. Plateaux saturés, distractions, absence de profondeur.</p>
+                    <p style="font-size: 1.2rem; margin-top: 1rem;"><span style="font-family: 'Playfair Display';">DEENWAY</span> tisse une toile cohérente : un écosystème islamique moderne, sobre et fiable. Objectif : une identité numérique forte pour la oumma, enracinée dans la tradition mais aux interfaces épurées.</p>
+                </div>
+                <!-- photo évocatrice (architecture douce) -->
+                <div style="flex: 0 0 150px;">
+                    <img src="https://images.unsplash.com/photo-1585829365295-f3f6b5c2c8a7?w=200&q=80&auto=format&fit=crop" alt="spiritual digital" style="width: 100%; border-radius: 30% 10% 30% 10%; opacity: 0.9; box-shadow: 0 18px 30px -12px #b9ae9a;">
+                </div>
+            </div>
+            <div class="soft-quote" style="font-size: 2rem; font-family: 'Playfair Display'; color: #6d8764; border-left: 4px solid #b9ad90; padding-left: 2rem; margin: 2rem 0;">« Le digital au service du spirituel, sans distraction. »</div>
         </section>
 
-        <!-- ÉCOSYSTÈME DEENWAY -->
-        <section id="ecosystem" class="section">
+        <!-- ÉCOSYSTÈME avec cartes modernes -->
+        <section id="ecosystem" data-aos="fade-up">
             <h2>Écosystème DEENWAY</h2>
             <div class="ecosystem-grid">
-                <!-- Quran -->
-                <div class="eco-card">
-                    <a href="https://quran.ondeenway.org" target="_blank" rel="noopener">DEENWAY Quran</a>
-                    <div class="domain-note">quran.ondeenway.org</div>
-                    <p>Lecture et méditation du Coran, avec une interface épurée pour se concentrer sur la parole divine.</p>
+                <div class="eco-item" data-aos="zoom-in" data-aos-delay="100">
+                    <a href="https://quran.ondeenway.org" target="_blank">DEENWAY Quran</a>
+                    <div class="domain">quran.ondeenway.org</div>
+                    <p>Lecture et méditation du Coran, interface épurée pour se concentrer sur la parole divine.</p>
                 </div>
-                <!-- Hadith -->
-                <div class="eco-card">
-                    <a href="https://hadith.ondeenway.org" target="_blank" rel="noopener">DEENWAY Hadith</a>
-                    <div class="domain-note">hadith.ondeenway.org</div>
-                    <p>Accès aux recueils authentiques de la Sunna, structurés pour la compréhension et l’étude quotidienne.</p>
+                <div class="eco-item" data-aos="zoom-in" data-aos-delay="200">
+                    <a href="https://hadith.ondeenway.org" target="_blank">DEENWAY Hadith</a>
+                    <div class="domain">hadith.ondeenway.org</div>
+                    <p>Accès aux recueils authentiques de la Sunna, structurés pour l’étude quotidienne.</p>
                 </div>
-                <!-- Seerah -->
-                <div class="eco-card">
-                    <a href="https://seerah.ondeenway.org" target="_blank" rel="noopener">DEENWAY Seerah</a>
-                    <div class="domain-note">seerah.ondeenway.org</div>
+                <div class="eco-item" data-aos="zoom-in" data-aos-delay="300">
+                    <a href="https://seerah.ondeenway.org" target="_blank">DEENWAY Seerah</a>
+                    <div class="domain">seerah.ondeenway.org</div>
                     <p>La biographie du Prophète ﷺ racontée avec clarté, pour s’imprégner de sa lumière.</p>
                 </div>
-                <!-- Azkar -->
-                <div class="eco-card">
-                    <a href="https://azkar.ondeenway.org" target="_blank" rel="noopener">DEENWAY Azkar</a>
-                    <div class="domain-note">azkar.ondeenway.org</div>
-                    <p>Invocations matin et soir, tirées des sources sûres, dans un format apaisant et minimal.</p>
+                <div class="eco-item" data-aos="zoom-in" data-aos-delay="400">
+                    <a href="https://azkar.ondeenway.org" target="_blank">DEENWAY Azkar</a>
+                    <div class="domain">azkar.ondeenway.org</div>
+                    <p>Invocations matin et soir, tirées des sources sûres, dans un format apaisant.</p>
                 </div>
             </div>
-            <p style="text-align:center; margin-top:2rem; color:#859b7a; font-style:italic;">Chaque plateforme est une porte vers l’essentiel — toutes en construction, mais l’intention est déjà là.</p>
         </section>
 
-        <!-- PHILOSOPHIE -->
-        <section id="philosophy" class="section">
+        <!-- PHILOSOPHIE enrichie avec icônes texte -->
+        <section id="philosophy" data-aos="fade-up">
             <h2>Philosophie</h2>
-            <div class="philosophy-text">
-                <p><span style="font-weight:400;">Pureté du contenu.</span> Rien de superflu. Les textes parlent d’eux-mêmes, les interfaces s’effacent. L’utilisateur doit ressentir le sacré sans filtre visuel inutile.</p>
-                <p><span style="font-weight:400;">Simplicité & focus.</span> Moins de choix, plus de sens. Chaque outil DEENWAY a une seule fonction : rapprocher de la source.</p>
-                <p><span style="font-weight:400;">Authenticité.</span> Les références, les adhkar, les récits sont vérifiés. Rien n’est laissé au hasard. L’écosystème veut redevenir un terrain sûr pour l’âme connectée.</p>
+            <div class="philosophy-block">
+                <div class="philosophy-item" data-aos="fade-right">
+                    <span class="phil-icon">⏺</span>
+                    <div><strong style="font-size: 1.3rem;">Pureté du contenu.</strong> Rien de superflu. Les textes parlent d’eux-mêmes, les interfaces s’effacent. L’utilisateur doit ressentir le sacré sans filtre inutile.</div>
+                </div>
+                <div class="philosophy-item" data-aos="fade-right" data-aos-delay="100">
+                    <span class="phil-icon">◈</span>
+                    <div><strong style="font-size: 1.3rem;">Simplicité & focus.</strong> Moins de choix, plus de sens. Chaque outil DEENWAY a une seule fonction : rapprocher de la source.</div>
+                </div>
+                <div class="philosophy-item" data-aos="fade-right" data-aos-delay="150">
+                    <span class="phil-icon">◇</span>
+                    <div><strong style="font-size: 1.3rem;">Authenticité.</strong> Les références, les adhkar, les récits sont vérifiés. Rien n’est laissé au hasard. L’écosystème veut redevenir un terrain sûr pour l’âme connectée.</div>
+                </div>
             </div>
         </section>
 
-        <!-- À PROPOS DU FONDATEUR -->
-        <section id="founder" class="section">
+        <!-- FONDATEUR avec photo (2e portrait) -->
+        <section id="founder" data-aos="fade-up">
             <h2>Rida Sayah · fondateur</h2>
-            <div class="bio-text">
-                <p>D’abord développeur, ensuite chercheur de sens. Rida a ressenti le vide des espaces numériques actuels pour les pratiques islamiques. L’idée de DEENWAY a germé d’un constat simple : le savoir et la spiritualité méritent un contenant à leur mesure — épuré, digne, accessible.</p>
-                <p>La motivation profonde : offrir une identité digitale forte à l’islam, où chaque projet (Quran, hadith, seerah, azkar) soit une pierre posée avec cohérence. Vision long terme : un écosystème complet, sans publicité ni distraction, qui restaure la confiance dans les outils islamiques en ligne.</p>
-                <p>Rida reste discret, car l’œuvre doit primer sur l’auteur.</p>
+            <div class="founder-card">
+                <div class="founder-img">
+                    <!-- portrait différent mais discret -->
+                    <img src="https://images.unsplash.com/photo-1492562080023-ab3db95bfbce?w=200&q=80&auto=format&fit=crop" alt="Rida Sayah">
+                </div>
+                <div class="founder-bio">
+                    <p>D’abord développeur, ensuite chercheur de sens. Rida a ressenti le vide des espaces numériques actuels pour les pratiques islamiques. L’idée de DEENWAY a germé d’un constat simple : le savoir et la spiritualité méritent un contenant à leur mesure — épuré, digne, accessible.</p>
+                    <p style="margin-top: 0.8rem;">Motivation profonde : offrir une identité digitale forte à l’islam, où chaque projet (Quran, hadith, seerah, azkar) soit une pierre posée avec cohérence. Vision long terme : un écosystème complet, sans publicité ni distraction.</p>
+                </div>
             </div>
         </section>
 
-        <!-- CONTACT / LIENS DIRECTS (pas de formulaire) -->
-        <section id="contact" class="section">
+        <!-- CONTACT avec petite image symbolique -->
+        <section id="contact" data-aos="fade-up">
             <h2>Contact & liens</h2>
-            <ul class="contact-list">
-                <li><a href="mailto:contact@le20.net">contact@le20.net</a></li>
-                <li><a href="#" style="text-decoration:none; border-bottom: 1px dotted #ccc;">@deeenway (X)</a></li>
-                <li><a href="#" style="text-decoration:none; border-bottom: 1px dotted #ccc;">github/deenway</a></li>
-            </ul>
-            <!-- aucune icône, juste texte -->
-            <p style="text-align:center; color:#9dab90; font-size:0.95rem; max-width:500px; margin:1rem auto;">Une question, une suggestion, une prière ? Écrivez – je lis personnellement.</p>
+            <div class="contact-section">
+                <div class="contact-info">
+                    <ul>
+                        <li><a href="mailto:contact@le20.net">✧ contact@le20.net</a></li>
+                        <li><a href="#">✧ @deeenway (X)</a></li>
+                        <li><a href="#">✧ github/deenway</a></li>
+                    </ul>
+                    <p style="margin-top: 1.5rem; color:#475f41;">Une question, une suggestion, une prière ? Écrivez – je lis personnellement.</p>
+                </div>
+                <div class="contact-mini-img" title="deenway"></div>
+            </div>
         </section>
 
-        <!-- séparateur doux -->
-        <hr>
+        <hr style="border:0; border-top:1px solid #e3d9cc; width: 30%; margin: 3rem auto;">
 
-        <!-- footer silencieux -->
         <div class="footer-note">
             DEENWAY · une empreinte sobre · 2025
         </div>
-
-        <!-- ancres invisibles pour navigation tout texte -->
-        <div style="height: 1px;"></div>
     </div>
-    <!-- pas de scripts, pas de médias : pure statique, responsive, sans animations. -->
+
+    <!-- AOS animation library script (léger) -->
+    <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+    <script>
+        AOS.init({
+            duration: 700,
+            once: true,
+            offset: 40,
+            easing: 'ease-out-quad'
+        });
+    </script>
+    <!-- pas d'autre JS, seulement pour animations douces -->
 </body>
 </html>
