@@ -1,0 +1,378 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rida Sayah · DEENWAY</title>
+    <style>
+        /* ----- RESET & BASE ----- */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            background-color: #fbfaf6;   /* blanc cassé doux */
+            color: #2f3e2c;               /* vert olive profond mais doux */
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+            line-height: 1.6;
+            font-weight: 300;
+            font-size: 1rem;
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+        }
+
+        /* serif moderne pour accents spirituels */
+        h1, h2, h3, .serif {
+            font-family: 'Cormorant Garamond', 'Times New Roman', serif;
+            font-weight: 400;
+            letter-spacing: -0.01em;
+        }
+
+        .container {
+            max-width: 1000px;
+            margin: 0 auto;
+            padding: 2rem 2rem;
+        }
+
+        /* ----- TYPOGRAPHIE DOUCE ----- */
+        h1 {
+            font-size: clamp(3rem, 10vw, 5rem);
+            line-height: 1.1;
+            color: #2b3b2a;          /* olive légèrement plus présent */
+            margin-bottom: 0.5rem;
+            font-weight: 450;
+        }
+
+        h2 {
+            font-size: clamp(2rem, 6vw, 3rem);
+            border-bottom: 1px solid rgba(156, 165, 139, 0.2); /* gris vert pâle */
+            padding-bottom: 0.5rem;
+            margin-bottom: 2rem;
+            font-weight: 400;
+            color: #41533b;
+        }
+
+        h3 {
+            font-size: 1.8rem;
+            margin-bottom: 1rem;
+            color: #3f5a3a;
+            font-weight: 450;
+        }
+
+        .subhead {
+            font-size: 1.3rem;
+            font-family: 'Inter', sans-serif;
+            font-weight: 300;
+            color: #7b8a70;           /* vert-gris doux */
+            margin-bottom: 2rem;
+            letter-spacing: 0.3px;
+        }
+
+        /* ----- PALETTE & ÉLÉMENTS ----- */
+        .soft-beige {
+            background-color: #f6f3eb;   /* beige très doux pour alternance */
+        }
+
+        hr {
+            border: 0;
+            height: 1px;
+            background: linear-gradient(90deg, transparent, #cdd6c5, transparent);
+            margin: 2.5rem 0;
+            width: 40%;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        /* navigation minimale */
+        .nav-links {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 2rem;
+            justify-content: center;
+            margin: 2rem 0 3rem 0;
+            font-size: 1rem;
+            text-transform: uppercase;
+            letter-spacing: 3px;
+            font-weight: 300;
+            color: #8b9a7e;
+        }
+
+        .nav-links span {
+            color: #b9c4ae;
+            font-size: 0.9rem;
+        }
+
+        /* cartes écosystème : sobres, aérées */
+        .ecosystem-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 2rem;
+            margin: 2rem 0 1rem;
+        }
+
+        .eco-card {
+            background: rgba(255,255,255,0.5);
+            padding: 1.8rem 1.2rem;
+            border-radius: 0px;        /* pas de coins arrondis, minimal */
+            border-top: 1px solid #e2e2d6;
+            border-bottom: 1px solid #e2e2d6;
+            transition: all 0.1s ease;
+        }
+
+        .eco-card p {
+            color: #5c6b53;
+            font-size: 0.95rem;
+            margin-top: 0.8rem;
+        }
+
+        .eco-card a {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 1.6rem;
+            text-decoration: none;
+            color: #2e4a2b;
+            font-weight: 450;
+            word-break: break-word;
+        }
+
+        .eco-card a:hover {
+            text-decoration: underline;
+            text-decoration-color: #abb89e;
+            text-underline-offset: 4px;
+        }
+
+        .domain-note {
+            font-size: 0.9rem;
+            color: #9aab8b;
+            margin-top: 0.3rem;
+            font-style: italic;
+        }
+
+        /* sections texte purs */
+        .vision-text, .philosophy-text, .bio-text {
+            font-size: 1.2rem;
+            max-width: 720px;
+            margin-left: auto;
+            margin-right: auto;
+            color: #3c4d37;
+        }
+
+        .vision-text p, .philosophy-text p, .bio-text p {
+            margin-bottom: 1.5rem;
+        }
+
+        .soft-quote {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 2rem;
+            line-height: 1.3;
+            color: #5b7354;
+            margin: 2rem 0;
+            text-align: center;
+        }
+
+        /* contact simple liste */
+        .contact-list {
+            list-style: none;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 2.5rem;
+            margin: 2.5rem 0 1.5rem;
+            padding: 0;
+            font-size: 1.2rem;
+        }
+
+        .contact-list li a {
+            text-decoration: none;
+            color: #4b6043;
+            border-bottom: 1px dotted #cbd2bf;
+            padding-bottom: 2px;
+        }
+
+        .contact-list li a:hover {
+            border-bottom: 1px solid #5a7152;
+            color: #1e2e1b;
+        }
+
+        .footer-note {
+            text-align: center;
+            margin-top: 4rem;
+            font-size: 0.9rem;
+            color: #b6c2aa;
+            letter-spacing: 1px;
+        }
+
+        /* espacement élégant */
+        .section {
+            padding: 2rem 0 3rem 0;
+        }
+
+        .section + .section {
+            border-top: 1px solid rgba(184, 176, 152, 0.2);
+        }
+
+        /* responsive petits ecrans */
+        @media (max-width: 600px) {
+            .container {
+                padding: 1.5rem 1.2rem;
+            }
+            .nav-links {
+                gap: 1rem;
+                font-size: 0.85rem;
+                letter-spacing: 2px;
+            }
+            .ecosystem-grid {
+                grid-template-columns: 1fr;
+                gap: 1.2rem;
+            }
+            .contact-list {
+                flex-direction: column;
+                align-items: center;
+                gap: 1rem;
+            }
+            h1 {
+                font-size: clamp(2.5rem, 12vw, 4rem);
+            }
+        }
+
+        /* tablette ajustements */
+        @media (min-width: 601px) and (max-width: 900px) {
+            .container {
+                padding: 2rem 2.5rem;
+            }
+        }
+
+        /* héros spécifique */
+        .hero {
+            text-align: center;
+            margin: 2rem 0 3rem 0;
+        }
+
+        .hero p {
+            font-size: 1.5rem;
+            font-family: 'Cormorant Garamond', serif;
+            color: #859b7a;
+            max-width: 600px;
+            margin: 0.5rem auto 0;
+            border-top: 1px solid #eae6da;
+            padding-top: 1rem;
+        }
+
+        .name {
+            font-size: 2rem;
+            letter-spacing: 5px;
+            text-transform: uppercase;
+            color: #9eae8e;
+            margin-bottom: 0;
+            font-family: 'Inter', sans-serif;
+            font-weight: 300;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <!-- navigation minimale (ancres statiques, sans js) -->
+        <div class="nav-links">
+            <span>✦</span> <a href="#vision" style="text-decoration: none; color: inherit;">VISION</a> <span>✦</span>
+            <a href="#ecosystem" style="text-decoration: none; color: inherit;">ÉCOSYSTÈME</a> <span>✦</span>
+            <a href="#philosophy" style="text-decoration: none; color: inherit;">PHILOSOPHIE</a> <span>✦</span>
+            <a href="#founder" style="text-decoration: none; color: inherit;">FONDATEUR</a> <span>✦</span>
+            <a href="#contact" style="text-decoration: none; color: inherit;">CONTACT</a> <span>✦</span>
+        </div>
+
+        <!-- HERO / ACCUEIL -->
+        <div class="hero">
+            <div class="name">RIDA SAYAH</div>
+            <h1>DEENWAY</h1>
+            <p>Building a strong digital Islamic identity</p>
+        </div>
+
+        <!-- VISION SECTION -->
+        <section id="vision" class="section">
+            <h2>Vision</h2>
+            <div class="vision-text">
+                <p>Le monde numérique actuel manque d’espaces structurés dédiés à l’islam, où authenticité et clarté dominent. Les plateaux saturés, les distractions et l’absence de profondeur nous éloignent d’une présence digitale sincère.</p>
+                <p><span class="serif" style="font-size:1.5rem;">DEENWAY</span> est né pour tisser une toile cohérente : un écosystème islamique moderne, sobre et fiable. Chaque projet reflète la pureté du message, sans artifice. L’objectif global est de construire une identité numérique forte pour la oumma, enracinée dans la tradition mais aux interfaces épurées.</p>
+                <div class="soft-quote">« Le digital au service du spirituel, sans distraction. »</div>
+            </div>
+        </section>
+
+        <!-- ÉCOSYSTÈME DEENWAY -->
+        <section id="ecosystem" class="section">
+            <h2>Écosystème DEENWAY</h2>
+            <div class="ecosystem-grid">
+                <!-- Quran -->
+                <div class="eco-card">
+                    <a href="https://quran.ondeenway.org" target="_blank" rel="noopener">DEENWAY Quran</a>
+                    <div class="domain-note">quran.ondeenway.org</div>
+                    <p>Lecture et méditation du Coran, avec une interface épurée pour se concentrer sur la parole divine.</p>
+                </div>
+                <!-- Hadith -->
+                <div class="eco-card">
+                    <a href="https://hadith.ondeenway.org" target="_blank" rel="noopener">DEENWAY Hadith</a>
+                    <div class="domain-note">hadith.ondeenway.org</div>
+                    <p>Accès aux recueils authentiques de la Sunna, structurés pour la compréhension et l’étude quotidienne.</p>
+                </div>
+                <!-- Seerah -->
+                <div class="eco-card">
+                    <a href="https://seerah.ondeenway.org" target="_blank" rel="noopener">DEENWAY Seerah</a>
+                    <div class="domain-note">seerah.ondeenway.org</div>
+                    <p>La biographie du Prophète ﷺ racontée avec clarté, pour s’imprégner de sa lumière.</p>
+                </div>
+                <!-- Azkar -->
+                <div class="eco-card">
+                    <a href="https://azkar.ondeenway.org" target="_blank" rel="noopener">DEENWAY Azkar</a>
+                    <div class="domain-note">azkar.ondeenway.org</div>
+                    <p>Invocations matin et soir, tirées des sources sûres, dans un format apaisant et minimal.</p>
+                </div>
+            </div>
+            <p style="text-align:center; margin-top:2rem; color:#859b7a; font-style:italic;">Chaque plateforme est une porte vers l’essentiel — toutes en construction, mais l’intention est déjà là.</p>
+        </section>
+
+        <!-- PHILOSOPHIE -->
+        <section id="philosophy" class="section">
+            <h2>Philosophie</h2>
+            <div class="philosophy-text">
+                <p><span style="font-weight:400;">Pureté du contenu.</span> Rien de superflu. Les textes parlent d’eux-mêmes, les interfaces s’effacent. L’utilisateur doit ressentir le sacré sans filtre visuel inutile.</p>
+                <p><span style="font-weight:400;">Simplicité & focus.</span> Moins de choix, plus de sens. Chaque outil DEENWAY a une seule fonction : rapprocher de la source.</p>
+                <p><span style="font-weight:400;">Authenticité.</span> Les références, les adhkar, les récits sont vérifiés. Rien n’est laissé au hasard. L’écosystème veut redevenir un terrain sûr pour l’âme connectée.</p>
+            </div>
+        </section>
+
+        <!-- À PROPOS DU FONDATEUR -->
+        <section id="founder" class="section">
+            <h2>Rida Sayah · fondateur</h2>
+            <div class="bio-text">
+                <p>D’abord développeur, ensuite chercheur de sens. Rida a ressenti le vide des espaces numériques actuels pour les pratiques islamiques. L’idée de DEENWAY a germé d’un constat simple : le savoir et la spiritualité méritent un contenant à leur mesure — épuré, digne, accessible.</p>
+                <p>La motivation profonde : offrir une identité digitale forte à l’islam, où chaque projet (Quran, hadith, seerah, azkar) soit une pierre posée avec cohérence. Vision long terme : un écosystème complet, sans publicité ni distraction, qui restaure la confiance dans les outils islamiques en ligne.</p>
+                <p>Rida reste discret, car l’œuvre doit primer sur l’auteur.</p>
+            </div>
+        </section>
+
+        <!-- CONTACT / LIENS DIRECTS (pas de formulaire) -->
+        <section id="contact" class="section">
+            <h2>Contact & liens</h2>
+            <ul class="contact-list">
+                <li><a href="mailto:contact@le20.net">contact@le20.net</a></li>
+                <li><a href="#" style="text-decoration:none; border-bottom: 1px dotted #ccc;">@deeenway (X)</a></li>
+                <li><a href="#" style="text-decoration:none; border-bottom: 1px dotted #ccc;">github/deenway</a></li>
+            </ul>
+            <!-- aucune icône, juste texte -->
+            <p style="text-align:center; color:#9dab90; font-size:0.95rem; max-width:500px; margin:1rem auto;">Une question, une suggestion, une prière ? Écrivez – je lis personnellement.</p>
+        </section>
+
+        <!-- séparateur doux -->
+        <hr>
+
+        <!-- footer silencieux -->
+        <div class="footer-note">
+            DEENWAY · une empreinte sobre · 2025
+        </div>
+
+        <!-- ancres invisibles pour navigation tout texte -->
+        <div style="height: 1px;"></div>
+    </div>
+    <!-- pas de scripts, pas de médias : pure statique, responsive, sans animations. -->
+</body>
+</html>
